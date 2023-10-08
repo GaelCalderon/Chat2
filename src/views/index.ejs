@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container">
+        <!-- comienza formulario -->
+        <div class="container">
+                <div class="col-4">
+                    <div class="card-body">
+                        <form action="/add" method="POST">
+                            <label for="marca" class="form-label">Marca</label>
+                            <div class="form-grup">
+                                <input type="text" id="marca" name="marca"  placeholder="Marca" class="form-control">
+                            </div>
+                            <label for="nombre" class="form-label">Nombre</label>
+                            <div class="form-grup">
+                                <input type="text" id="nombre" name="nombre"  placeholder="Nombre" class="form-control">
+                            </div>
+                            <label for="precio" class="form-label">Precio</label>
+                            <div class="form-grup">
+                                <input type="number" id="precio" name="precio"   class="form-control">
+                            </div>
+                            <button  class="btn btn-primary">Registrar</button>
+                        </form>
+                    </div>
+                </div>            
+        </div>
+
+
+
+        <!-- fin de formulario -->
+        <div class="col-5">
+            <table class="table table-bordered table-hover">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Marca</th>
+                        <th>Nombre</th>
+                        <th>Precio</th>
+                        <th>Opciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% for (var i = 0; i < datos.length; i++) { %>
+                        <tr>
+                            <td><%= i + 1 %></td>
+                            <td><%= datos[i].marca %></td>
+                            <td><%= datos[i].nombre %></td>
+                            <td><%= datos[i].precio %></td>
+                            <td>
+                                <button class="btn btn-danger" onclick="confirmDelete('<%= datos[i]._id %>')">
+                                    Eliminar
+                                </button>                                    
+                                
+                                
+                            </td>
+                        </tr>
+                    <% } %>
+                </tbody>
+            </table>
+        </div>
+        
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <script>
+        function confirmDelete(id) {
+            const confirmDelete = confirm('¿Seguro que quieres eliminar este elemento?');
+        
+            if (confirmDelete) {
+                // Si se confirma la eliminación, redirige al servidor para eliminar el elemento
+                window.location.href = `/eliminar/${id}`;
+            }
+        }
+        </script>
+</body>
+</html>
