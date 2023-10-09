@@ -12,6 +12,13 @@ router.get('/', async (req, res) => {
         });
     } 
 );
+// Ruta para mostrar la página de registro
+router.get('/registro', (req, res) => {
+    res.render('registro.ejs'); // Renderiza el archivo registro.ejs
+});
+
+
+
 router.post('/add', async (req, res) =>{
     const valor = new Producto(req.body);
     console.log(req.body);
