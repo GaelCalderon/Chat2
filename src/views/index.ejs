@@ -1,77 +1,65 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inicio</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <title>Iniciar Sesión</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            width: 300px;
+            text-align: center;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .form-group button {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            background-color: #4caf50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
 </head>
-
-<style>
-    body {
-  font-family: Arial, sans-serif;
-}container {
-  max-width: 300px;
-  margin: 0 auto;
-  padding: 20px;
-  border: 1px solid #ccc;
-  margin-top: 100px;
-}
-
-label {
-  display: block;
-  margin-bottom: 5px;
-}
-
-input[type="text"], input[type="password"] {
-  width: 100%;
-  padding: 10px;
-  margin-bottom: 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-}
-
-input[type="submit"] {
-  width: 100%;
-  padding: 10px;
-  border: none;
-  background-color: #3498db;
-  color: white;
-  cursor: pointer;
-  border-radius: 5px;
-}
-
-input[type="submit"]:hover {
-  background-color: #2980b9;
-}
-
-</style>
 
 <body>
     <div class="container">
-        <!-- comienza formulario -->
-        <div class="container">
-            <h1>Iniciar sesión</h1>
-    <form action="login.php" method="post">
-      <label for="username">Nombre de usuario:</label><br>
-      <input type="text" id="username" name="username" required><br>
-      <label for="password">Contraseña:</label><br>
-      <input type="password" id="password" name="password" required><br><br>
-      <input type="submit" value="Iniciar sesión">
-    </form>
-
-        
+        <h2>Iniciar Sesión</h2>
+        <form>
+            <div class="form-group">
+                <input type="email" id="email" placeholder="Correo Electrónico" required>
+            </div>
+            <div class="form-group">
+                <input type="password" id="password" placeholder="Contraseña" required>
+            </div>
+            <div class="form-group">
+                <button type="submit">Iniciar Sesión</button>
+            </div>
+        </form>
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
-    <script>
-        function confirmDelete(id) {
-            const confirmDelete = confirm('¿Seguro que quieres eliminar este elemento?');
-        
-            if (confirmDelete) {
-                // Si se confirma la eliminación, redirige al servidor para eliminar el elemento
-                window.location.href = `/eliminar/${id}`;
-            }
-        }
-        </script>
 </body>
+
 </html>
