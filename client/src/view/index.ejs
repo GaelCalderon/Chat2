@@ -1,63 +1,82 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Chat</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-    }
-    .container {
-      max-width: 400px;
-      margin: 0 auto;
-      padding: 20px;
-      border: 1px solid #ccc;
-      border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    }
-    .btn-primary {
-    background-color: #3bc711;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    cursor: pointer;
-    border-radius: 5px;
-  }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iniciar Sesión</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
 
-  .btn-primary:hover {
-    background-color: #3bc711;
-  }
+        .container {
+            width: 300px;
+            text-align: center;
+        }
 
-  /* Estilo para el input */
-  #mensaje {
-    padding: 10px;
-    width: 70%;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-  }
+        .form-group {
+            margin-bottom: 20px;
+        }
 
-  #mensaje:focus {
-    outline: none;
-    border-color: #3498db;
-  }
+        .form-group input,
+        .form-group button {
+            width: calc(100% - 20px);
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .form-group button {
+            background-color: #6444f1;
+            color: white;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            margin-top: 10px;
+        }
+
+        .form-group button:hover {
+            background-color: #523bc2;
+        }
+
+        .register-link {
+            text-decoration: none;
+            color: #6444f1;
+            font-weight: bold;
+            font-size: 16px;
+            margin-top: 10px;
+            display: block;
+        }
+
+        .register-link:hover {
+            color: #523bc2;
+        }
     </style>
 </head>
-<body>
-  <div class="container">
-      <form action="/send" method="post">
-          <br>
-          <div class="form-floating">
-              <textarea disabled class="form-control" placeholder=""  id="textHolder" style="height: 400px"  ><%= mensaje %></textarea>
-              <label for="floatingTextarea2"></label>
-            </div>
 
-            <div class="input-group mb-3">
-              <input type="text" id="mensaje" name="mensaje" class="form-control" placeholder="Mensaje" aria-label="Mensaje" aria-describedby="button-addon2">
-              <button class="btn btn-primary" >Enviar</button>
+<body>
+    <div class="container">
+        <h2>Iniciar Sesión</h2>
+        <form>
+            <div class="form-group">
+                <input type="email" id="email" placeholder="Correo Electrónico" required>
             </div>
-            
-      </form>
-  </div>
+            <div class="form-group">
+                <input type="password" id="password" placeholder="Contraseña" required>
+            </div>
+            <div class="form-group">
+                <button type="submit">Iniciar Sesión</button>
+                <a href="/registro" class="register-link">Registrar</a>
+            </div>
+        </form>
+    </div>
 </body>
+
 </html>
